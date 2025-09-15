@@ -2,6 +2,12 @@
     const STORAGE_KEY = "visitedProducts";
 
     const init = () => {
+
+        if (!location.hostname.includes("www.samsung.com")) {
+            console.log("wrong page");
+            return;
+    }
+
         ensureTestData();
         buildHTML();
         buildCSS();
@@ -369,7 +375,7 @@
             prevBtn.classList.toggle('swiper-button-disabled', prevBtn.disabled);
             nextBtn.classList.toggle('swiper-button-disabled', nextBtn.disabled);
         };
-        
+
         const startDragging = (e) => {
             isDragging = true;
             carousel.classList.add('grabbing');

@@ -23,7 +23,11 @@
     };
   
     const init = () => {
-      if (location.pathname !== "/") return;
+      
+          if (!location.hostname.includes("www.e-bebek.com")) {
+            console.log("wrong page");
+            return;
+    }
   
       const lastCategory = localStorage.getItem(STORAGE_KEY) || "Bebek Arabaları";
       buildHTML(lastCategory);
