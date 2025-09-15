@@ -133,6 +133,102 @@
           from { opacity: 0; transform: scale(0.9); }
           to { opacity: 1; transform: scale(1); }
         }
+
+        @media screen and (max-width: 1024px) {
+          .personalized-banner h2 {
+            font-size: 24px;
+          }
+          .personalized-banner p {
+            font-size: 16px;
+          }
+          .personalized-banner button {
+            padding: 12px 20px;
+            font-size: 16px;
+          }
+          .popup-content {
+            padding: 30px;
+          }
+          .popup-content h3 {
+            font-size: 24px;
+          }
+          .popup-content p {
+            font-size: 18px;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          .personalized-banner {
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 16px;
+          }
+          .personalized-banner h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+          }
+          .personalized-banner p {
+            font-size: 15px;
+            margin-bottom: 14px;
+          }
+          .personalized-banner button {
+            padding: 12px 18px;
+            font-size: 15px;
+          }
+          .popup-content {
+            padding: 24px;
+          }
+          .popup-content h3 {
+            font-size: 22px;
+            margin-bottom: 14px;
+          }
+          .popup-content p {
+            font-size: 16px;
+            margin-bottom: 18px;
+          }
+          .popup-content button {
+            padding: 10px 18px;
+            font-size: 16px;
+          }
+        }
+
+        @media screen and (max-width: 480px) {
+          .personalized-banner {
+            padding: 16px;
+            margin-bottom: 16px;
+            border-width: 2px;
+            border-radius: 10px;
+          }
+          .personalized-banner h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+          }
+          .personalized-banner p {
+            font-size: 14px;
+            margin-bottom: 12px;
+          }
+          .personalized-banner button {
+            padding: 10px 16px;
+            font-size: 14px;
+            border-radius: 8px;
+          }
+          .popup-content {
+            padding: 20px;
+            border-radius: 12px;
+          }
+          .popup-content h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+          }
+          .popup-content p {
+            font-size: 15px;
+            margin-bottom: 16px;
+          }
+          .popup-content button {
+            padding: 10px 16px;
+            font-size: 14px;
+            border-radius: 8px;
+          }
+        }
       `;
       document.head.appendChild(style);
     };
@@ -140,7 +236,7 @@
     const setEvents = () => {
       document.addEventListener("click", (e) => {
         if (e.target.classList.contains("claim-coupon")) {
-          console.log("EVENT_TRACKED: coupon_claimed", { category: localStorage.getItem(STORAGE_KEY) });
+          //console.log("EVENT_TRACKED: coupon_claimed", { category: localStorage.getItem(STORAGE_KEY) });
           document.querySelector(".coupon-popup").classList.remove("hidden");
         }
         if (e.target.classList.contains("close-popup")) {
