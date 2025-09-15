@@ -163,7 +163,7 @@
         const style = document.createElement("style");
         style.textContent = `
             .visited-carousel-wrapper { position: relative; margin: 24px 0 60px; width: 100%; }
-            .visited-carousel-title { font-family: 'SamsungSharpSans', arial, sans-serif; font-size: 40px; line-height: 1.33; margin-bottom: 24px; color: #000; padding: 0 24px;  margin: 0 232.500px; }
+            .visited-carousel-title { font-family: 'SamsungSharpSans', arial, sans-serif; font-size: 40px; line-height: 1.33; color: #000; padding: 0 24px; margin: 0 232.500px 42px; }
             .visited-carousel { display: flex; gap: 8px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 12px; padding-left: 232.500px; width: 100%; scrollbar-width: none; user-select: none; }
             .visited-carousel::-webkit-scrollbar { display: none; }
             .visited-carousel-item { flex-shrink: 0; width: 312px !important; font-family: 'SamsungOne', arial, sans-serif; color: #000; position: relative; transition: transform 0.3s; }
@@ -346,7 +346,22 @@
 
         const updateProgress = () => {
             const scrollWidth = carousel.scrollWidth - carousel.clientWidth;
-            const progress = scrollWidth > 0 ? carousel.scrollLeft / scrollWidth : 0;
+            
+            if (scrollWidth <= 0) {
+                barFill.style.transform = `scaleX(1)`;
+                prevBtn.disabled = true;
+                nextBtn.disabled = true;
+                prevBtn.classList.add('swiper-button-disabled');
+                nextBtn.classList.add('swiper-button-disabled');
+                return;
+            }
+            
+            const totalSteps = Math.ceil(scrollWidth / 320);
+            
+            const currentStep = Math.round(carousel.scrollLeft / 320);
+            
+            const progress = (currentStep + 1) / (totalSteps + 1);
+            
             barFill.style.transform = `scaleX(${progress})`;
 
             prevBtn.disabled = carousel.scrollLeft <= 0;
@@ -354,7 +369,7 @@
             prevBtn.classList.toggle('swiper-button-disabled', prevBtn.disabled);
             nextBtn.classList.toggle('swiper-button-disabled', nextBtn.disabled);
         };
-
+        
         const startDragging = (e) => {
             isDragging = true;
             carousel.classList.add('grabbing');
