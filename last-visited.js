@@ -17,7 +17,7 @@
                     url: "#", 
                     image: "https://images.samsung.com/is/image/samsung/p6pim/tr/f2507/gallery/tr-galaxy-z-fold7-f966-sm-f966blgctur-thumb-547552022?$216_216_PNG$", 
                     price: "25.999,00 TL", 
-                    chargerType: ["not"] 
+                    chargerType: ["not", "10-25-usb-pd"]
                 },
                 { 
                     title: "Samsung Galaxy Tab S9", 
@@ -38,7 +38,35 @@
                     url: "#", 
                     image: "https://images.samsung.com/is/image/samsung/p6pim/tr/f2507/gallery/tr-galaxy-z-fold7-f966-sm-f966blgctur-thumb-547552022?$216_216_PNG$", 
                     price: "25.999,00 TL", 
-                    chargerType: ["not"] 
+                    chargerType: ["not", "10-25-usb-pd"] 
+                },
+                { 
+                    title: "Samsung Galaxy Tab S9", 
+                    url: "#", 
+                    image: "https://images.samsung.com/is/image/samsung/p6pim/tr/sm-a566bzkatur/gallery/tr-galaxy-a56-5g-sm-a566-sm-a566bzkatur-thumb-545455056?$216_216_PNG$", 
+                    price: "12.499,00 TL", 
+                    chargerType: ["10-25-usb-pd"] 
+                },
+                { 
+                    title: "Samsung Galaxy Watch 6", 
+                    url: "#", 
+                    image: "https://images.samsung.com/is/image/samsung/p6pim/tr/sm-x210rzsrtur/gallery/tr-galaxy-tab-a9-plus-sm-x210r-sm-x210rzsrtur-thumb-547617106?$216_216_PNG$", 
+                    price: "3.299,00 TL", 
+                    chargerType: ["not", "10-25-usb-pd"]
+                },
+                     { 
+                    title: "Samsung Galaxy Watch 6", 
+                    url: "#", 
+                    image: "https://images.samsung.com/is/image/samsung/p6pim/tr/sm-x210rzsrtur/gallery/tr-galaxy-tab-a9-plus-sm-x210r-sm-x210rzsrtur-thumb-547617106?$216_216_PNG$", 
+                    price: "3.299,00 TL", 
+                    chargerType: ["not", "10-25-usb-pd"]
+                },
+                { 
+                    title: "Samsung Galaxy S24", 
+                    url: "#", 
+                    image: "https://images.samsung.com/is/image/samsung/p6pim/tr/f2507/gallery/tr-galaxy-z-fold7-f966-sm-f966blgctur-thumb-547552022?$216_216_PNG$", 
+                    price: "25.999,00 TL", 
+                    chargerType: ["not", "10-25-usb-pd"] 
                 },
                 { 
                     title: "Samsung Galaxy Tab S9", 
@@ -136,7 +164,7 @@
         style.textContent = `
             .visited-carousel-wrapper { position: relative; margin: 24px 0 60px; width: 100%; }
             .visited-carousel-title { font-family: 'SamsungSharpSans', arial, sans-serif; font-size: 40px; line-height: 1.33; margin-bottom: 24px; color: #000; padding: 0 24px;  margin: 0 232.500px; }
-            .visited-carousel { display: flex; gap: 8px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 12px; margin-left: 232.500px; width: 100%; scrollbar-width: none; user-select: none; width: calc(100% - 465px); }
+            .visited-carousel { display: flex; gap: 8px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 12px; padding-left: 232.500px; width: 100%; scrollbar-width: none; user-select: none; }
             .visited-carousel::-webkit-scrollbar { display: none; }
             .visited-carousel-item { flex-shrink: 0; width: 312px !important; font-family: 'SamsungOne', arial, sans-serif; color: #000; position: relative; transition: transform 0.3s; }
             .visited-carousel-image { position: relative; width: 312px; height: 312px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
@@ -184,7 +212,6 @@
                 display: flex; 
                 justify-content: center; 
                 align-items: center;
-                transition: all 0.3s ease;
                 padding: 0;
             }
             .co78-visited-nav__button:not(:disabled):hover { 
@@ -344,7 +371,7 @@
             if (!isDragging) return;
             e.preventDefault();
             const x = e.pageX - carousel.offsetLeft;
-            const walk = (x - startX) * 2;
+            const walk = (x - startX) * 3;
             carousel.scrollLeft = scrollLeft - walk;
             updateProgress();
         };
