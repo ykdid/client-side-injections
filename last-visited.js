@@ -31,7 +31,7 @@
                     url: "#", 
                     image: "https://images.samsung.com/is/image/samsung/p6pim/tr/sm-x210rzsrtur/gallery/tr-galaxy-tab-a9-plus-sm-x210r-sm-x210rzsrtur-thumb-547617106?$216_216_PNG$", 
                     price: "3.299,00 TL", 
-                    chargerType: ["not", "10-25-usb-pd"] // ✅ iki ikon örneği
+                    chargerType: ["not", "10-25-usb-pd"]
                 },
                 { 
                     title: "Samsung Galaxy S24", 
@@ -52,7 +52,7 @@
                     url: "#", 
                     image: "https://images.samsung.com/is/image/samsung/p6pim/tr/sm-x210rzsrtur/gallery/tr-galaxy-tab-a9-plus-sm-x210r-sm-x210rzsrtur-thumb-547617106?$216_216_PNG$", 
                     price: "3.299,00 TL", 
-                    chargerType: ["not", "10-25-usb-pd"] // ✅ iki ikon örneği
+                    chargerType: ["not", "10-25-usb-pd"]
                 }
             ];
             localStorage.setItem(STORAGE_KEY, JSON.stringify(testProducts));
@@ -136,7 +136,7 @@
         style.textContent = `
             .visited-carousel-wrapper { position: relative; margin: 24px 0 60px; width: 100%; }
             .visited-carousel-title { font-family: 'SamsungSharpSans', arial, sans-serif; font-size: 40px; line-height: 1.33; margin-bottom: 24px; color: #000; padding: 0 24px;  margin: 0 232.500px; }
-            .visited-carousel { display: flex; gap: 8px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 12px; margin: 0 232.500px; scrollbar-width: none; user-select: none; width: calc(100% - 465px); }
+            .visited-carousel { display: flex; gap: 8px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 12px; margin-left: 232.500px; width: 100%; scrollbar-width: none; user-select: none; width: calc(100% - 465px); }
             .visited-carousel::-webkit-scrollbar { display: none; }
             .visited-carousel-item { flex-shrink: 0; width: 312px !important; font-family: 'SamsungOne', arial, sans-serif; color: #000; position: relative; transition: transform 0.3s; }
             .visited-carousel-image { position: relative; width: 312px; height: 312px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
@@ -147,7 +147,7 @@
             .visited-carousel-name { font-family: 'SamsungOne',arial,sans-serif; font-weight: 700; font-size: 22px; line-height: 1.33; color: #000; text-decoration: none; }
             .visited-carousel-price { margin-top: 17px; font-size: 20px; font-weight: bold; color: #000; }
             .visited-carousel-charger { margin-top: 16px; display: flex; gap: 6px; }
-            .charger-icon { width: 30px; height: 40px; object-fit: contain; } /* ✅ 30x40 */
+            .charger-icon { width: 30px; height: 40px; object-fit: contain; }
             .co78-visited-nav__inner { 
                 display: flex; 
                 justify-content: center; 
@@ -208,6 +208,99 @@
                 overflow: hidden;
                 clip: rect(0,0,0,0);
                 border: 0;
+            }
+
+
+            @media screen and (max-width: 1440px) {
+                .visited-carousel-title,
+                .visited-carousel,
+                .co78-visited-nav__inner {
+                    margin-left: 120px;
+                    margin-right: 120px;
+                }
+                .visited-carousel {
+                    width: calc(100% - 240px);
+                }
+            }
+
+            @media screen and (max-width: 1024px) {
+                .visited-carousel-title,
+                .visited-carousel,
+                .co78-visited-nav__inner {
+                    margin-left: 48px;
+                    margin-right: 48px;
+                }
+                .visited-carousel {
+                    width: calc(100% - 96px);
+                }
+                .co78-visited-nav__progress {
+                    width: 400px;
+                }
+                .visited-carousel-title {
+                    font-size: 32px;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                .visited-carousel-title,
+                .visited-carousel,
+                .co78-visited-nav__inner {
+                    margin-left: 24px;
+                    margin-right: 24px;
+                }
+                .visited-carousel {
+                    width: calc(100% - 48px);
+                }
+                .co78-visited-nav__inner {
+                    gap: 24px;
+                }
+                .co78-visited-nav__progress {
+                    width: 200px;
+                }
+                .visited-carousel-title {
+                    font-size: 28px;
+                }
+                .visited-carousel-item {
+                    width: 280px !important;
+                }
+                .visited-carousel-image {
+                    width: 280px;
+                    height: 280px;
+                }
+                .visited-carousel-name {
+                    font-size: 20px;
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+                .visited-carousel-title,
+                .visited-carousel,
+                .co78-visited-nav__inner {
+                    margin-left: 16px;
+                    margin-right: 16px;
+                }
+                .visited-carousel {
+                    width: calc(100% - 32px);
+                }
+                .co78-visited-nav__progress {
+                    display: none;
+                }
+                .co78-visited-nav__inner {
+                    justify-content: flex-end;
+                }
+                .visited-carousel-title {
+                    font-size: 24px;
+                }
+                .visited-carousel-item {
+                    width: 240px !important;
+                }
+                .visited-carousel-image {
+                    width: 240px;
+                    height: 240px;
+                }
+                .visited-carousel-name {
+                    font-size: 18px;
+                }
             }
         `;
         document.head.appendChild(style);
