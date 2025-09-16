@@ -170,7 +170,7 @@
         style.textContent = `
             .visited-carousel-wrapper { position: relative; margin: 24px 0 60px; width: 100%; }
             .visited-carousel-title { font-family: 'SamsungSharpSans', arial, sans-serif; font-size: 40px; line-height: 1.33; color: #000; padding: 0 24px; margin: 0 232.500px 42px; }
-            .visited-carousel { display: flex; gap: 8px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 12px; padding-left: 232.500px; width: 100%; scrollbar-width: none; user-select: none; }
+            .visited-carousel { display: flex; gap: 8px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 12px; padding-left: 232.500px; padding-right: 232.500px; width: 100%; scrollbar-width: none; user-select: none; }
             .visited-carousel::-webkit-scrollbar { display: none; }
             .visited-carousel-item { flex-shrink: 0; width: 312px !important; font-family: 'SamsungOne', arial, sans-serif; color: #000; position: relative; transition: transform 0.3s; }
             .visited-carousel-image { position: relative; width: 312px; height: 312px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
@@ -362,11 +362,10 @@
                 return;
             }
             
-            const totalSteps = Math.ceil(scrollWidth / 320);
-            
-            const currentStep = Math.round(carousel.scrollLeft / 320);
-            
-            const progress = (currentStep + 1) / (totalSteps + 1);
+            const stepWidth = 320;
+            const minProgress = stepWidth / carousel.scrollWidth;
+            const scrollProgress = carousel.scrollLeft / scrollWidth;
+            const progress = minProgress + (scrollProgress * (1 - minProgress));
             
             barFill.style.transform = `scaleX(${progress})`;
 
