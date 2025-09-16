@@ -238,13 +238,28 @@
     };
   
     const setEvents = () => {
+      const popup = document.querySelector(".coupon-popup");
+      
+      const closePopup = () => {
+        popup?.classList.add("hidden");
+      };
+
       document.addEventListener("click", (e) => {
         if (e.target.classList.contains("claim-coupon")) {
           //console.log("EVENT_TRACKED: coupon_claimed", { category: localStorage.getItem(STORAGE_KEY) });
-          document.querySelector(".coupon-popup").classList.remove("hidden");
+          popup?.classList.remove("hidden");
         }
         if (e.target.classList.contains("close-popup")) {
-          document.querySelector(".coupon-popup").classList.add("hidden");
+          closePopup();
+        }
+        if (e.target === popup) {
+          closePopup();
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closePopup();
         }
       });
     };
