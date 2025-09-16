@@ -169,7 +169,7 @@
         const style = document.createElement("style");
         style.textContent = `
             .visited-carousel-wrapper { position: relative; margin: 24px 0 60px; width: 100%; }
-            .visited-carousel-title { font-family: 'SamsungSharpSans', arial, sans-serif; font-size: 40px; line-height: 1.33; color: #000; padding: 0 24px; margin: 0 232.500px 42px; }
+            .visited-carousel-title { font-family: 'SamsungSharpSans', arial, sans-serif; font-size: 40px; line-height: 1.33; color: #000; padding: 0 24px; margin: 0 127.500px 42px; }
             .visited-carousel { display: flex; gap: 8px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 12px; padding-left: 127.500px; padding-right: 127.500px; width: 100%; scrollbar-width: none; user-select: none; }
             .visited-carousel::-webkit-scrollbar { display: none; }
             .visited-carousel-item { flex-shrink: 0; width: 312px !important; font-family: 'SamsungOne', arial, sans-serif; color: #000; position: relative; transition: transform 0.3s; }
