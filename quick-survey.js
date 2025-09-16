@@ -91,7 +91,101 @@
       #survey-banner .ins-footer { padding:12px 16px; border-top:1px solid #f0f0f0; font-size:12px; color:#666; display:flex; justify-content:space-between; align-items:center; gap:8px; }
       #survey-banner .ins-success { color:#0a7a3d; font-weight:700; }
       #survey-banner .ins-error { color:#b00020; font-weight:700; }
-      @media (max-width:480px) { #survey-banner { left:12px; right:12px; width:auto; bottom:12px; } }
+
+      @media (max-width: 1024px) {
+        #survey-banner {
+          width: 380px;
+          right: 20px;
+          bottom: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #survey-banner {
+          right: 16px;
+          bottom: 16px;
+          width: 360px;
+        }
+        #survey-banner .ins-header {
+          padding: 14px;
+        }
+        #survey-banner .ins-options {
+          gap: 6px;
+        }
+        #survey-banner .ins-option {
+          padding: 8px 10px;
+          font-size: 13px;
+        }
+        #survey-banner .ins-btn {
+          padding: 8px 12px;
+          font-size: 13px;
+        }
+      }
+      
+      @media (max-width: 640px) {
+        #survey-banner {
+          width: 320px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #survey-banner {
+          left: 12px;
+          right: 12px;
+          bottom: 12px;
+          width: auto;
+          max-width: 100%;
+        }
+        #survey-banner .ins-header {
+          padding: 12px;
+          gap: 8px;
+        }
+        #survey-banner .ins-header h3 {
+          font-size: 14px;
+        }
+        #survey-banner .ins-body {
+          padding: 12px;
+        }
+        #survey-banner .ins-options {
+          flex-direction: column;
+          gap: 6px;
+        }
+        #survey-banner .ins-option {
+          flex: 1 1 auto;
+          padding: 10px;
+        }
+        #survey-banner .ins-actions {
+          flex-direction: column;
+          gap: 8px;
+        }
+        #survey-banner .ins-btn {
+          width: 100%;
+          padding: 12px;
+        }
+        #survey-banner .ins-footer {
+          padding: 10px 12px;
+          text-align: center;
+          justify-content: center;
+          font-size: 11px;
+        }
+        #survey-banner #survey-input {
+          font-size: 13px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        #survey-banner {
+          left: 8px;
+          right: 8px;
+          bottom: 8px;
+        }
+        #survey-banner .ins-body {
+          padding: 10px;
+        }
+        #survey-banner .ins-header {
+          padding: 10px;
+        }
+      }
     `;
     const style = document.createElement("style");
     style.id = "survey-banner-styles";
